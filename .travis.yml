@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 language: python
 python:
-  - "3.5"
+  - "3.4"
 env:
   - SNAP_CHANNEL="stable"
   - SNAP_CHANNEL="edge"
@@ -20,5 +20,5 @@ before_script:
   - sudo usermod -a -G lxd $USER
   - sudo -E sudo -u $USER -E bash -c "/snap/bin/juju bootstrap localhost test"
 script:
-  - tox -e lint,py35
+  - tox -e lint,py3
   - tests/integration.sh
